@@ -329,7 +329,7 @@ type
 
       {**
        * Frees memory. The fonts passed on Create() and mipmap creation
-       * are freed too. 
+       * are freed too.
        *}
       destructor Destroy(); override;
 
@@ -468,7 +468,7 @@ type
        * @raises EFontError  if the glyph could not be initialized
        *}
       constructor Create(const Filename: IPath; Size: integer);
-      
+
       destructor Destroy(); override;
 
       property Filename: IPath read fFilename;
@@ -485,7 +485,7 @@ type
   TFTFontFaceCache = class
     private
       fFaces:       array of TFTFontFace;
-      fFacesRefCnt: array of integer;      
+      fFacesRefCnt: array of integer;
     public
       {**
        * @raises EFontError  if the font could not be initialized
@@ -555,7 +555,7 @@ type
 
       {** Freetype specific char-index (<> char-code) }
       property CharIndex: FT_UInt read fCharIndex;
-      
+
       {** Freetype face used for this glyph }
       property Face: TFTFontFace read fFace;
   end;
@@ -660,7 +660,7 @@ type
                          PreCache: boolean = true);
 
       procedure AddFallback(const Filename: IPath); override;
-                         
+
       {** @seealso TGlyphCache.FlushCache }
       procedure FlushCache(KeepBaseSet: boolean);
 
@@ -668,7 +668,7 @@ type
       property Outset: single read GetOutset;
   end;
 
-  
+
   {**
    * Represents a freetype font with an additional outline around its glyphs.
    * The outline size is passed on creation and cannot be changed later.
@@ -682,7 +682,7 @@ type
       fPreCache: boolean;
 
       procedure ResetIntern();
-      
+
   protected
       procedure DrawUnderline(const Text: UCS4String); override;
       procedure Render(const Text: UCS4String); override;
